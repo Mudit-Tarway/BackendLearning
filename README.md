@@ -14,4 +14,7 @@
      The file contains the code that involves how http server are created and use of middleware
 
 5. Index.js
-    The file contains the use CORS(CROSS ORIGIN RESOURCES SHARING) 
+    The file contains the use CORS(CROSS ORIGIN RESOURCES SHARING)
+
+6. index.html
+    This file contains how axios hit the backend and extract data from the frontend and then process the data.
