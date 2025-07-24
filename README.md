@@ -13,3 +13,5 @@
 4. Assignment1.js
      The file contains the code that involves how http server are created and use of middleware
 
+5. Index.js
+    The file contains the use CORS(CROSS ORIGIN RESOURCES SHARING) 
