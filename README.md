@@ -18,3 +18,7 @@
 
 6. index.html
     This file contains how axios hit the backend and extract data from the frontend and then process the data.
+
+7. package.json
+    This file contains the version of the express and cors external library
+   
