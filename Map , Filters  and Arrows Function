@@ -1,0 +1,44 @@
+Q1. Given an array , return he modified array that contains the multiplication 2 of every number in the input array. (Using Map and Arrows Function)
+
+Solution 1.a Usng normal function 
+const inputArray = [1,2,3,4,5];
+const newArray=[];
+for(let i=0 ; i<inputArray.length;i++)
+{
+   newArray.push(inputArray[i]*2);
+}
+console.log(newArray);
+
+Solution 1.b Uisng map
+const inputArray = [1, 2, 3, 4, 5];
+const ans = inputArray.map((n) => {
+  return n * 2;
+});
+console.log(ans);
+
+
+Q2. Given an array return the even number from the array (Using Filters and Arrow Function)
+
+Solution 2.a Usng normal function 
+const inputArray = [1,2,3,4,5];
+const newArray=[];
+for(let i=0 ; i<inputArray.length;i++)
+{
+   if(inputArray[] % 2 == 0)
+  {
+        newArray.push(inputArray[i));
+  }
+}
+console.log(newArray);
+
+Solution 2.b Uisng Filters and Arrows Function
+const inputArray = [1, 2, 3, 4, 5];
+const ans = inputArray.filter((n) => {
+  if (n % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+});
+console.log(ans);
+
