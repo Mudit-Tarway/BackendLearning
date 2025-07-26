@@ -21,4 +21,7 @@
 
 7. package.json
     This file contains the version of the express and cors external library
+
+8. token.js
+    This file contains the code when the user signup the password and username will store in the universal array and when the user signin a unique token will be generated and store in th euniversal array where username and password are stored and when user hits /me endpoint it will display the password and username.
    
