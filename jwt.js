@@ -1,88 +1,84 @@
-const express = require('express');
-
-const jwt = require('jsonwebtoken');
-
-const JWT_SECRET = "rNDOMmUDITQWERTYASDSA"
+const express = require("express");
 
 const app = express();
 
+const jwt = require("jsonwebtoken");
+
+const SECRET_TOKEN = "mYhELLOWORLD";
+
 app.use(express.json());
 
-const users = [] ;
+const users = [];
 
+app.post("/signup", function (req, res) {
+  const username = req.body.username;
+  const password = req.body.password;
 
-app.post("/signup",function(req,res){ 
-    const username = req.body.username;
-    const password = req.body.password;
+  users.push({
+    username: username,
+    password: password,
+  });
 
-    users.push(
-        {
-            username: username,
-            password: password
-        }
-    )
+  res.json({
+    message: "You are signed in Congratulations!!",
+  });
 
+  console.log(users);
+});
+
+app.post("/signin", function (req, res) {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  let userFoundName = null;
+
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].username === username && users[i].password === password) {
+      userFoundName = users[i];
+    }
+  }
+
+  if (userFoundName) {
+    const token = jwt.sign(
+      {
+        username: username,
+      },
+      SECRET_TOKEN
+    );
     res.json({
-        message : "You are signed in"
+        token : token
     })
+  } else {
+    res.status(403).send({
+      message: "Invalid username or password",
+    });
+  }
 
-    console.log(users)
-})
+  console.log(users);
+});
 
-app.post("/signin",function(req,res){
-    const username = req.body.username;
-    const password = req.body.password;
+app.get("/me", function (req, res) {
+  const userToken = req.headers.token;
+  const DECODEDiNFORMATION = jwt.verify(userToken, SECRET_TOKEN);
+  const username = DECODEDiNFORMATION.username;
 
-    const founduser = users.find(function(u){
-        if(u.username == username && u.password == password){
-            return true;
-        }else{
-            return false;
-        }
-    })
+  let foundUser = null;
 
-    if(founduser){
-        const token = jwt.sign({
-            usernmae: username
-        }, JWT_SECRET); // create the token 
-
-        res.json({
-            token : token
-        })
-    }else{
-        res.status(403).send({
-            message: "Invalid username or password"
-        })
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].username === username) {
+      foundUser = users[i];
     }
-
-    console.log(users);
-
-
-})
-
-app.get("/me" , function(req , res){
-    const userToken = req.headers.token;
-    const DECODEDiNFORMATION = jwt.verify(userToken , JWT_SECRET); // JSON OBJECT 
-    const username = DECODEDiNFORMATION.username; 
-
-    let foundUser = null;
-
-    for(let i=0;i<users.length;i++){
-        if(users[i].username == username){
-            foundUser = users[i];
-        }
-    }
-    if(foundUser){
-        res.json({
-            username :  foundUser.username ,
-            password : foundUser.password
-        })
-    }else{
-        res.json({
-            message : "Invalid Token"
-        })
-    }
-})
-
+  }
+  if (foundUser) {
+    res.json({
+      username: foundUser.username,
+      password: foundUser.password,
+    });
+  } else {
+    res.json({
+      message: "Invalid Token",
+    });
+  }
+});
 
 app.listen(3000);
