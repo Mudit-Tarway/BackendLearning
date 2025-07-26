@@ -27,4 +27,9 @@
 
 9. doctor.js
      In this file a code contains that have get,post,delete,put method where users can check the how many healthy kidney are there, add a healthy kidney , delete a unhealthy kidney.
+
+10. jwt.js
+     When the users hit /signup global users array will store the its credentials in the array.
+     When the users hit /signin the users have to share its credentials and check if its true JWT TOKEN will generate and else status of 403 will be displayed
+     When the users hit /me first  the jwt will verifyed then username and password will displayed.
    
