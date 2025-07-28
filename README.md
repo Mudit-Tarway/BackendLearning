@@ -40,4 +40,7 @@
      Auth function checks where the users existes or not.
      
 12. Signin and Signup Backend and Frontend
-     The user will signin and signup and in backend the user is stored in the array.  
+     The user will signin and signup and in backend the user is stored in the array.
+
+13. jwtwork.js
+     In this js I worked with jwt verify , decode and sign with more zod to verify user emails and password length is minimum 6
