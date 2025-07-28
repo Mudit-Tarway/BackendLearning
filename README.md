@@ -39,4 +39,5 @@
      When the users hit /me first  the jwt will verifyed then username and password will displayed.
      Auth function checks where the users existes or not.
      
-    
+12. Signin and Signup Backend and Frontend
+     The user will signin and signup and in backend the user is stored in the array.  
