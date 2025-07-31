@@ -13,7 +13,7 @@
 4. Assignment1.js
      The file contains the code that involves how http server are created and use of middleware
 
-5. Index.js
+5. cors.js
     The file contains the use CORS(CROSS ORIGIN RESOURCES SHARING)
 
 6. index.html
@@ -44,3 +44,6 @@
 
 13. jwtwork.js
      In this js I worked with jwt verify , decode and sign with more zod to verify user emails and password length is minimum 6
+
+14. index.js and db.js
+      Created a backend for todo app 
