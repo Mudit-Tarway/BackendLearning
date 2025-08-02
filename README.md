@@ -46,4 +46,8 @@
      In this js I worked with jwt verify , decode and sign with more zod to verify user emails and password length is minimum 6
 
 14. index.js and db.js
-      Created a backend for todo app 
+      Created a backend for todo app
+
+15. Todo Backend
+      Created a signin , signup , todo and todos endpoint.
+      
